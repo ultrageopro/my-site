@@ -8,17 +8,11 @@
     href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;700&display=swap"
     rel="stylesheet"
   />
-
-  <!-- Favicon for browsers -->
   <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png">
   <link rel="icon" type="image/x-icon" href="/static/icons/favicon.ico">
-
-  <!-- Android icons -->
   <link rel="icon" type="image/png" sizes="192x192" href="/static/icons/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/static/icons/android-chrome-512x512.png">
-
-  <!-- Apple touch icon -->
   <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png">
 
   <meta property="og:title" content="Варя Кчау">
@@ -154,12 +148,10 @@
 <body>
   <div class="card">
     <div class="photo">
-      <a href="https://ibb.co/6W5KpWk" target="_blank">
-        <img src="https://i.ibb.co/nLSXVLF/varya.jpg" alt="varya" border="0" />
-      </a>
+      <img id="dynamic-photo" src="https://i.ibb.co/nLSXVLF/varya.jpg" alt="varya" />
     </div>
-    <h1>Всем превет я варя кчау</h1>
-    <p>Я люблю рскей езык и нервану слушать вот чтоб все думале какая я загадка.</p>
+    <h1>Всем привет, я Варя Кчау</h1>
+    <p>Я люблю рскей езык и нервану слушать, вот чтоб все думали какая я загадка.</p>
     <a href="https://github.com/varyakchau" target="_blank">GitHub Varya Kchau</a>
   </div>
 
@@ -167,5 +159,22 @@
     сделано с ❤️ и 
     <a href="https://github.com/ultrageopro" target="_blank" class="link-inline">ultrageopro</a>
   </footer>
+
+  <script>
+    const photos = [
+      "https://i.ibb.co/VjyzPpf/Screenshot-2024-12-31-at-05-02-02.png",
+      "https://i.ibb.co/gzt6mkp/Screenshot-2024-12-31-at-05-02-48.png",
+      "https://i.ibb.co/yQ4FYmt/Screenshot-2024-12-31-at-05-02-58.png",
+      "https://i.ibb.co/nLSXVLF/varya.jpg"
+    ];
+
+    let index = 0;
+    const photoElement = document.getElementById("dynamic-photo");
+
+    setInterval(() => {
+      index = (index + 1) % photos.length; 
+      photoElement.src = photos[index];
+    }, 3000);
+  </script>
 </body>
 </html>
